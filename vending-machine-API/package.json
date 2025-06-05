@@ -1,0 +1,26 @@
+{
+  "name": "vending-machine-api",
+  "version": "1.0.0",
+  "description": "Vending Machine API with modular architecture",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "jest --verbose",
+    "scenarios": "jest src/tests/services/Scenario1.test.js --verbose && jest src/tests/services/Scenario2.test.js --verbose",
+    "test:scenario1": "jest src/tests/services/Scenario1.test.js --verbose",
+    "test:scenario2": "jest src/tests/services/Scenario2.test.js --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jest": "^29.7.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.1"
+  }
+}
