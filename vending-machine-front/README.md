@@ -1,26 +1,59 @@
-# React + TypeScript + Vite
+# Vending Machine Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React TypeScript frontend for the vending machine application with responsive design and real-time updates.
 
-Currently, two official plugins are available:
+## Features
+
+- Modern React with TypeScript and Vite
+- Real-time balance updates
+- Interactive product selection
+- Shopping cart functionality
+- Responsive UI with Tailwind CSS
+- Comprehensive error handling
+
+## Project Structure
+
+````
+src/
+├── components/         # React components
+│   ├── Cart.tsx       # Shopping cart
+│   ├── CoinInserter.tsx   # Coin insertion
+│   └── ProductList.tsx    # Product display
+├── services/
+│   └── api.ts         # API integration
+└── App.tsx            # Main application
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
+### Prerequisites
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+
+### Installation
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+````
+
+### Scripts
+
+```bash
+# Development
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
   languageOptions: {
     // other options...
     parserOptions: {
@@ -35,20 +68,20 @@ You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-re
 
 ```js
 // eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+import reactX from "eslint-plugin-react-x";
+import reactDom from "eslint-plugin-react-dom";
 
 export default tseslint.config({
   plugins: {
     // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
+    "react-x": reactX,
+    "react-dom": reactDom,
   },
   rules: {
     // other rules...
     // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
+    ...reactX.configs["recommended-typescript"].rules,
     ...reactDom.configs.recommended.rules,
   },
-})
+});
 ```

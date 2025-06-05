@@ -1,0 +1,32 @@
+{
+  "name": "vending-machine-project",
+  "version": "1.0.0",
+  "description": "Vending Machine Application with Node.js API and React Frontend",
+  "private": true,
+  "scripts": {
+    "install": "concurrently \"cd vending-machine-API && npm install\" \"cd vending-machine-front && npm install\"",
+    "start": "concurrently \"npm run start:api\" \"npm run start:front\"",
+    "start:api": "cd vending-machine-API && npm run dev",
+    "start:front": "cd vending-machine-front && npm run dev",
+    "test": "concurrently \"npm run test:api\" \"npm run test:front\"",
+    "test:api": "cd vending-machine-API && npm test",
+    "test:front": "cd vending-machine-front && npm test",
+    "test:scenarios": "cd vending-machine-API && npm run scenarios"
+  },
+  "keywords": [
+    "vending-machine",
+    "react",
+    "nodejs",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}

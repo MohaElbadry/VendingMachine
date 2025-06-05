@@ -71,62 +71,68 @@ npm test
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/vending-machine/products` | Get all products with purchasability status |
-| POST | `/api/vending-machine/coins` | Insert a coin into the machine |
-| GET | `/api/vending-machine/balance` | Get current balance in the machine |
-| POST | `/api/vending-machine/products/:productId/select` | Select a product by ID |
-| POST | `/api/vending-machine/transaction/complete` | Complete transaction and dispense products |
-| POST | `/api/vending-machine/transaction/cancel` | Cancel transaction and refund money |
+| Method | Endpoint                          | Description                                 |
+| ------ | --------------------------------- | ------------------------------------------- |
+| GET    | `/api/products`                   | Get all products with purchasability status |
+| POST   | `/api/coins`                      | Insert a coin into the machine              |
+| GET    | `/api/balance`                    | Get current balance in the machine          |
+| POST   | `/api/products/:productId/select` | Select a product by ID                      |
+| POST   | `/api/transaction/complete`       | Complete transaction and dispense products  |
+| POST   | `/api/transaction/cancel`         | Cancel transaction and refund money         |
 
 ## Example Usage
 
 ### Scenario 1: Buy a single product
 
 1. Insert 5 MAD:
+
    ```
-   POST /api/vending-machine/coins
+   POST /api/coins
    { "value": 5 }
    ```
 
 2. Select a soda (3.5 MAD):
+
    ```
-   POST /api/vending-machine/products/1/select
+   POST /api/products/1/select
    ```
 
 3. Complete the transaction:
    ```
-   POST /api/vending-machine/transaction/complete
+   POST /api/transaction/complete
    ```
    Response: Soda dispensed, 1.5 MAD change returned
 
 ### Scenario 2: Buy multiple products
 
 1. Insert 5 MAD:
+
    ```
-   POST /api/vending-machine/coins
+   POST /api/coins
    { "value": 5 }
    ```
 
 2. Insert 2 MAD:
+
    ```
-   POST /api/vending-machine/coins
+   POST /api/coins
    { "value": 2 }
    ```
 
 3. Select a soda (3.5 MAD):
+
    ```
-   POST /api/vending-machine/products/1/select
+   POST /api/products/1/select
    ```
 
 4. Select TikTak (2 MAD):
+
    ```
-   POST /api/vending-machine/products/3/select
+   POST /api/products/3/select
    ```
 
 5. Complete the transaction:
    ```
-   POST /api/vending-machine/transaction/complete
+   POST /api/transaction/complete
    ```
    Response: Soda and TikTak dispensed, 0.5 MAD change returned
